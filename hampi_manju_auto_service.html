@@ -1,0 +1,817 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Chronicle of Vijayanagara on Three Wheels | Hampi Manju Auto</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400;1,600&display=swap" rel="stylesheet">
+    
+    <!-- Static Tailwind CSS v2.2.19 (No JIT Compilation needed) -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <style>
+        /* =========================================
+           CUSTOM COLOR VARIABLES & UTILITIES 
+           (Replaces arbitrary JIT Tailwind classes)
+           ========================================= */
+        :root {
+            --parchment: #F9F6F0;
+            --granite: #2D2A26;
+            --ochre: #C86E3C;
+            --brass: #A88950;
+            --card-bg: #FCFAF7;
+            --polaroid-bg: #FAFAFA;
+            --footer-bg: #211F1C;
+            --mobile-cta-bg: #1A1816;
+        }
+
+        body {
+            background-color: var(--parchment);
+            color: var(--granite);
+            font-family: 'Inter', sans-serif;
+            background-image: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M20 20.5V18H0v-2h20v-2H0v-2h20v-2H0V8h20V6H0V4h20V2H0V0h22v20h2V0h2v20h2V0h2v20h2V0h2v20h2V0h2v20h2v2H20v-1.5zM0 20h2v20H0V20zm4 0h2v20H4V20zm4 0h2v20h-2V20zm4 0h2v20h-2V20zm4 4h20v2H20v-2zm0 4h20v2H20v-2zm0 4h20v2H20v-2zm0 4h20v2H20v-2z' fill='%23A88950' fill-opacity='0.03' fill-rule='evenodd'/%3E%3C/svg%3E");
+        }
+
+        .font-serif { font-family: 'Playfair Display', serif; }
+        .font-mono { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace; }
+
+        /* Custom Colors */
+        .bg-parchment { background-color: var(--parchment); }
+        .bg-parchment-95 { background-color: rgba(249, 246, 240, 0.95); }
+        .bg-parchment-60 { background-color: rgba(249, 246, 240, 0.6); }
+        .bg-granite { background-color: var(--granite); }
+        .bg-granite-5 { background-color: rgba(45, 42, 38, 0.05); }
+        .bg-ochre { background-color: var(--ochre); }
+        .bg-ochre-10 { background-color: rgba(200, 110, 60, 0.1); }
+        .bg-card { background-color: var(--card-bg); }
+        .bg-polaroid { background-color: var(--polaroid-bg); }
+        .bg-footer { background-color: var(--footer-bg); }
+        .bg-mobile-cta { background-color: rgba(26, 24, 22, 0.95); }
+        .bg-testimonial-badge { background-color: #fef3c7; }
+        .bg-transparent { background-color: transparent; }
+
+        .text-granite { color: var(--granite); }
+        .text-granite-90 { color: rgba(45, 42, 38, 0.9); }
+        .text-granite-80 { color: rgba(45, 42, 38, 0.8); }
+        .text-granite-70 { color: rgba(45, 42, 38, 0.7); }
+        .text-granite-60 { color: rgba(45, 42, 38, 0.6); }
+        .text-granite-50 { color: rgba(45, 42, 38, 0.5); }
+        .text-ochre { color: var(--ochre); }
+        .text-brass { color: var(--brass); }
+        .text-parchment { color: var(--parchment); }
+        .text-parchment-70 { color: rgba(249, 246, 240, 0.7); }
+        .text-parchment-60 { color: rgba(249, 246, 240, 0.6); }
+        .text-testimonial-badge { color: #b45309; }
+        .text-star { color: #f59e0b; }
+
+        .border-granite { border-color: var(--granite); }
+        .border-granite-80 { border-color: rgba(45, 42, 38, 0.8); }
+        .border-granite-20 { border-color: rgba(45, 42, 38, 0.2); }
+        .border-granite-10 { border-color: rgba(45, 42, 38, 0.1); }
+        .border-ochre { border-color: var(--ochre); }
+        .border-ochre-40 { border-color: rgba(200, 110, 60, 0.4); }
+        .border-ochre-50 { border-color: rgba(200, 110, 60, 0.5); }
+        .border-brass { border-color: var(--brass); }
+        .border-brass-20 { border-color: rgba(168, 137, 80, 0.2); }
+        .border-brass-30 { border-color: rgba(168, 137, 80, 0.3); }
+        .border-brass-40 { border-color: rgba(168, 137, 80, 0.4); }
+        .border-brass-50 { border-color: rgba(168, 137, 80, 0.5); }
+        .border-testimonial-badge { border-color: #f59e0b; }
+        .border-transparent { border-color: transparent; }
+
+        /* Custom Typography & Sizes */
+        .text-9px { font-size: 9px; line-height: 1.2; }
+        .text-10px { font-size: 10px; line-height: 1.2; }
+        .text-11px { font-size: 11px; line-height: 1.4; }
+        .text-13px { font-size: 13px; line-height: 1.5; }
+        .leading-tight-hero { line-height: 1.1; }
+        
+        /* Custom Layouts & Effects */
+        .hero-bg {
+            background-image: linear-gradient(to right, rgba(249, 246, 240, 0.95) 0%, rgba(249, 246, 240, 0.8) 50%, rgba(249, 246, 240, 0.3) 100%), url('https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?q=80&w=1920&auto=format&fit=crop');
+        }
+        .heritage-img {
+            filter: sepia(0.15) grayscale(0.1);
+        }
+        .aspect-4-3 {
+            padding-bottom: 75%;
+            position: relative;
+        }
+        .aspect-4-3 img {
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+        }
+        
+        /* Timeline Specific Positioning */
+        .timeline-line::before {
+            content: ''; position: absolute; top: 0.5rem; bottom: 0.5rem; width: 1px;
+            background-color: rgba(200, 110, 60, 0.4); left: 1.125rem;
+        }
+        .timeline-badge { left: -2.1rem; }
+        
+        /* Rotations */
+        .rotate-neg-2 { transform: rotate(-2deg); }
+        .rotate-1 { transform: rotate(1deg); }
+        .rotate-neg-1-5 { transform: rotate(-1.5deg); }
+
+        /* Shadows */
+        .shadow-mobile-nav { box-shadow: 0 -10px 40px rgba(0, 0, 0, 0.3); }
+
+        /* Interactions */
+        .hover-bg-brass-10:hover { background-color: rgba(168, 137, 80, 0.1); }
+        .hover-border-ochre-50:hover { border-color: rgba(200, 110, 60, 0.5); }
+        .active-bg-brass-10:active { background-color: rgba(168, 137, 80, 0.1); }
+        .active-bg-ochre-dark:active { background-color: #A8582C; }
+
+        /* Tab transitions */
+        .tab-content { display: none; animation: fadeIn 0.4s ease-in-out; }
+        .tab-content.active { display: block; }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(5px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Polaroid styling */
+        .polaroid { transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); }
+        .polaroid:hover { transform: scale(1.03) rotate(0deg) translateY(-5px); z-index: 10; box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04); }
+        
+        /* Custom scrollbar */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: var(--parchment); }
+        ::-webkit-scrollbar-thumb { background: var(--brass); border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: var(--ochre); }
+    </style>
+</head>
+<body class="pb-20 md:pb-0 relative overflow-x-hidden">
+
+    <!-- 1. HEADER -->
+    <header class="sticky top-0 z-40 bg-parchment-95 backdrop-blur-md border-b border-brass-30 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex items-center justify-between">
+            <a href="#" class="flex flex-col">
+                <span class="font-serif font-black text-2xl tracking-tight text-granite">Hampi Manju</span>
+                <span class="font-mono text-9px uppercase font-bold tracking-widest text-ochre">Heritage Auto Service</span>
+            </a>
+            
+            <div class="flex items-center gap-4">
+                <a href="tel:+918660730121" class="hidden sm:flex items-center gap-2 px-4 py-2 border border-brass text-granite text-sm font-serif font-bold hover-bg-brass-10 transition-colors">
+                    <i data-lucide="phone" class="w-4 h-4 text-ochre"></i>
+                    +91 86607 30121
+                </a>
+                <a href="https://wa.me/918660730121" target="_blank" class="hidden sm:flex items-center gap-2 px-4 py-2 bg-granite text-parchment text-sm font-serif font-bold hover:bg-black transition-colors">
+                    <i data-lucide="message-circle" class="w-4 h-4 text-brass"></i>
+                    Inquire Now
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- 2. HERO SECTION -->
+    <section class="relative pt-20 pb-24 border-b border-brass-30 bg-cover bg-center hero-bg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="max-w-2xl space-y-6">
+                <div class="inline-block px-3 py-1 border border-ochre text-ochre text-xs font-mono uppercase tracking-widest font-black rounded-sm bg-ochre-10 backdrop-blur-sm">
+                    Verified Local Heritage Guide
+                </div>
+                
+                <h1 class="font-serif text-4xl sm:text-5xl md:text-6xl font-black text-granite leading-tight-hero tracking-tight">
+                    The Chronicle of <span class="text-ochre italic font-medium border-b-2 border-brass">Vijayanagara</span> on Three Wheels.
+                </h1>
+                
+                <p class="text-lg text-granite-90 leading-relaxed font-serif font-medium bg-parchment-60 p-2 rounded backdrop-blur-sm inline-block">
+                    Explore the monolithic boulder landscapes and sacred ruins of Hampi with Manju—your trusted local auto companion.
+                </p>
+
+                <div class="flex items-center gap-6 pt-4 text-sm font-mono text-granite font-bold">
+                    <div class="flex items-center gap-2">
+                        <i data-lucide="shield-check" class="w-5 h-5 text-ochre"></i>
+                        <span>12+ Yrs Experience</span>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <i data-lucide="star" class="w-5 h-5 text-star fill-current"></i>
+                        <span>4.9/5 Rating</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. INTERACTIVE EXPEDITION CIRCUITS -->
+    <section class="py-20 border-b border-brass-20 relative z-10">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <!-- Tabs Navigation -->
+            <div class="flex flex-col sm:flex-row gap-2 mb-8 bg-granite-5 p-1 rounded-sm border border-brass-20">
+                <button onclick="switchTab('day1')" id="btn-day1" class="tab-btn flex-1 py-3 px-4 font-mono text-xs uppercase tracking-widest font-bold text-granite bg-parchment border border-brass shadow-sm transition-all text-center">
+                    Day 1: Sacred Center
+                </button>
+                <button onclick="switchTab('day2')" id="btn-day2" class="tab-btn flex-1 py-3 px-4 font-mono text-xs uppercase tracking-widest font-bold text-granite-60 bg-transparent border-transparent hover:text-granite transition-all text-center">
+                    Day 2: Royal Enclosure
+                </button>
+                <button onclick="switchTab('day3')" id="btn-day3" class="tab-btn flex-1 py-3 px-4 font-mono text-xs uppercase tracking-widest font-bold text-granite-60 bg-transparent border-transparent hover:text-granite transition-all text-center">
+                    Day 3: Anegundi & Lake
+                </button>
+            </div>
+
+            <!-- TAB CONTENT CONTAINER -->
+            <div class="bg-card border border-brass-40 p-6 sm:p-10 shadow-sm relative">
+                
+                <!-- Corner Accents -->
+                <div class="absolute top-0 left-0 w-3 h-3 border-t border-l border-granite"></div>
+                <div class="absolute top-0 right-0 w-3 h-3 border-t border-r border-granite"></div>
+                <div class="absolute bottom-0 left-0 w-3 h-3 border-b border-l border-granite"></div>
+                <div class="absolute bottom-0 right-0 w-3 h-3 border-b border-r border-granite"></div>
+
+                <!-- ================= DAY 1 ================= -->
+                <div id="content-day1" class="tab-content active">
+                    <!-- Header -->
+                    <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-6 pb-6 border-b border-brass-20">
+                        <div>
+                            <div class="flex items-center gap-2 mb-2">
+                                <span class="font-mono text-10px font-bold bg-ochre text-parchment px-2 py-0.5 rounded-sm">DAY 1</span>
+                                <span class="font-mono text-xs text-granite-60">Paced for leisurely exploration</span>
+                            </div>
+                            <h3 class="font-serif text-3xl sm:text-4xl font-black text-granite mb-1">Sacred Center & Kamalapura</h3>
+                        </div>
+                        <div class="flex flex-wrap gap-3 font-mono text-xs">
+                            <div class="flex items-center gap-1.5 px-3 py-1.5 border border-brass-40 rounded-sm bg-white">
+                                <i data-lucide="clock" class="w-3.5 h-3.5 text-ochre"></i> Full Day (8 Hours)
+                            </div>
+                            <div class="flex items-center gap-1.5 px-3 py-1.5 border border-brass-40 rounded-sm bg-white">
+                                <i data-lucide="navigation" class="w-3.5 h-3.5 text-ochre"></i> ~18 to 22 km
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Info Cards -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-6">
+                        <div class="p-5 border border-brass-30 bg-white shadow-sm rounded-lg">
+                            <h4 class="font-mono text-11px font-bold text-ochre uppercase tracking-wider mb-2 flex items-center gap-1.5">
+                                <i data-lucide="sparkles" class="w-4 h-4"></i> Manju's Local Field Secret
+                            </h4>
+                            <p class="font-serif text-sm text-granite-80 leading-relaxed">
+                                "Visit the Kamalapura Museum before the sunset point to understand the true scale of the Vijayanagara empire."
+                            </p>
+                        </div>
+                        <div class="p-5 border border-brass-30 bg-white shadow-sm rounded-lg font-mono text-11px leading-relaxed space-y-2">
+                            <div><span class="font-bold text-granite">Walking Terrain:</span> <span class="text-granite-70">Moderate (Cobblestones & Steps)</span></div>
+                            <div><span class="font-bold text-granite">Temple Etiquette:</span> <span class="text-granite-70">Shoulders & knees covered</span></div>
+                            <div><span class="font-bold text-granite">Highlights:</span> <span class="text-granite-70">Hemakuta Hill, Virupaksha, Monolithic Statues</span></div>
+                        </div>
+                    </div>
+
+                    <!-- Timeline -->
+                    <div class="mt-12">
+                        <h4 class="font-mono text-11px font-bold text-granite-50 uppercase tracking-widest mb-6">Chronological Stop Timeline</h4>
+                        <div class="relative pl-10 space-y-6 timeline-line">
+                            
+                            <!-- Day 1 Spots (7 total) -->
+                            <div class="relative group">
+                                <div class="absolute top-4 w-7 h-7 rounded-full bg-granite border-2 border-ochre flex items-center justify-center text-11px font-mono font-bold text-brass z-10 shadow-sm timeline-badge">1</div>
+                                <div class="bg-white p-4 rounded-xl border border-brass-20 shadow-sm flex flex-col sm:flex-row gap-4 hover-border-ochre-50 transition-colors">
+                                    <img src="./assets/Virupaksha temple.jpg" class="w-full sm:w-32 h-24 object-cover rounded-lg heritage-img" alt="Virupaksha Temple" />
+                                    <div class="flex-1 flex flex-col justify-center">
+                                        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-1">
+                                            <h5 class="font-serif font-black text-lg text-granite">Virupaksha Temple</h5>
+                                            <span class="text-ochre font-bold font-mono text-11px">Morning</span>
+                                        </div>
+                                        <p class="font-serif text-sm text-granite-70">Living 7th-century sanctuary towering over the Hampi Bazaar.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="relative group">
+                                <div class="absolute top-4 w-7 h-7 rounded-full bg-granite border-2 border-ochre flex items-center justify-center text-11px font-mono font-bold text-brass z-10 shadow-sm timeline-badge">2</div>
+                                <div class="bg-white p-4 rounded-xl border border-brass-20 shadow-sm flex flex-col sm:flex-row gap-4 hover-border-ochre-50 transition-colors">
+                                    <img src="./assets/Hemakuta Hill.jpg" class="w-full sm:w-32 h-24 object-cover rounded-lg heritage-img" alt="Hemakuta Hill" />
+                                    <div class="flex-1 flex flex-col justify-center">
+                                        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-1">
+                                            <h5 class="font-serif font-black text-lg text-granite">Hemakuta Hill</h5>
+                                            <span class="text-ochre font-bold font-mono text-11px">Mid-Morning</span>
+                                        </div>
+                                        <p class="font-serif text-sm text-granite-70">A gently sloping granite hill adorned with pre-Vijayanagara Jain temples.</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="relative group">
+                                <div class="absolute top-4 w-7 h-7 rounded-full bg-granite border-2 border-ochre flex items-center justify-center text-11px font-mono font-bold text-brass z-10 shadow-sm timeline-badge">3</div>
+                                <div class="bg-white p-4 rounded-xl border border-brass-20 shadow-sm flex flex-col sm:flex-row gap-4 hover-border-ochre-50 transition-colors">
+                                    <img src="./assets/kadalekalu & sasivekalu ganesha hampi.jpg" class="w-full sm:w-32 h-24 object-cover rounded-lg heritage-img" alt="Ganeshas" />
+                                    <div class="flex-1 flex flex-col justify-center">
+                                        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-1">
+                                            <h5 class="font-serif font-black text-lg text-granite">Kadalekalu & Sasivekalu Ganesha</h5>
+                                            <span class="text-ochre font-bold font-mono text-11px">Late Morning</span>
+                                        </div>
+                                        <p class="font-serif text-sm text-granite-70">Massive monolithic Ganesha statues carved from single granite boulders.</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="relative group">
+                                <div class="absolute top-4 w-7 h-7 rounded-full bg-granite border-2 border-ochre flex items-center justify-center text-11px font-mono font-bold text-brass z-10 shadow-sm timeline-badge">4</div>
+                                <div class="bg-white p-4 rounded-xl border border-brass-20 shadow-sm flex flex-col sm:flex-row gap-4 hover-border-ochre-50 transition-colors">
+                                    <img src="./assets/Krishna Temple & Bazaar.jpg" class="w-full sm:w-32 h-24 object-cover rounded-lg heritage-img" alt="Krishna Temple" />
+                                    <div class="flex-1 flex flex-col justify-center">
+                                        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-1">
+                                            <h5 class="font-serif font-black text-lg text-granite">Krishna Temple & Bazaar</h5>
+                                            <span class="text-ochre font-bold font-mono text-11px">Mid-Day</span>
+                                        </div>
+                                        <p class="font-serif text-sm text-granite-70">Stunning temple complex with an extensive, partially excavated ancient market street.</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="relative group">
+                                <div class="absolute top-4 w-7 h-7 rounded-full bg-granite border-2 border-ochre flex items-center justify-center text-11px font-mono font-bold text-brass z-10 shadow-sm timeline-badge">5</div>
+                                <div class="bg-white p-4 rounded-xl border border-brass-20 shadow-sm flex flex-col sm:flex-row gap-4 hover-border-ochre-50 transition-colors">
+                                    <img src="./assets/Ugra Narasimha.jpg" class="w-full sm:w-32 h-24 object-cover rounded-lg heritage-img" alt="Ugra Narasimha" />
+                                    <div class="flex-1 flex flex-col justify-center">
+                                        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-1">
+                                            <h5 class="font-serif font-black text-lg text-granite">Ugra Narasimha</h5>
+                                            <span class="text-ochre font-bold font-mono text-11px">Afternoon</span>
+                                        </div>
+                                        <p class="font-serif text-sm text-granite-70">The largest monolithic statue in Hampi, depicting the fierce avatar of Vishnu.</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="relative group">
+                                <div class="absolute top-4 w-7 h-7 rounded-full bg-granite border-2 border-ochre flex items-center justify-center text-11px font-mono font-bold text-brass z-10 shadow-sm timeline-badge">6</div>
+                                <div class="bg-white p-4 rounded-xl border border-brass-20 shadow-sm flex flex-col sm:flex-row gap-4 hover-border-ochre-50 transition-colors">
+                                    <img src="./assets/Badavilinga.jpg" class="w-full sm:w-32 h-24 object-cover rounded-lg heritage-img" alt="Badavilinga" />
+                                    <div class="flex-1 flex flex-col justify-center">
+                                        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-1">
+                                            <h5 class="font-serif font-black text-lg text-granite">Badavilinga</h5>
+                                            <span class="text-ochre font-bold font-mono text-11px">Afternoon</span>
+                                        </div>
+                                        <p class="font-serif text-sm text-granite-70">A giant Shiva Linga perpetually surrounded by water in a stone chamber.</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="relative group">
+                                <div class="absolute top-4 w-7 h-7 rounded-full bg-granite border-2 border-ochre flex items-center justify-center text-11px font-mono font-bold text-brass z-10 shadow-sm timeline-badge">7</div>
+                                <div class="bg-white p-4 rounded-xl border border-brass-20 shadow-sm flex flex-col sm:flex-row gap-4 hover-border-ochre-50 transition-colors">
+                                    <img src="./assets/Kamalapura Museum & Sunset point.jpg" class="w-full sm:w-32 h-24 object-cover rounded-lg heritage-img" alt="Sunset Point" />
+                                    <div class="flex-1 flex flex-col justify-center">
+                                        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-1">
+                                            <h5 class="font-serif font-black text-lg text-granite">Kamalapura Museum & Sunset point</h5>
+                                            <span class="text-ochre font-bold font-mono text-11px">Evening</span>
+                                        </div>
+                                        <p class="font-serif text-sm text-granite-70">ASI museum containing recovered artifacts, concluding with a serene sunset view.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ================= DAY 2 ================= -->
+                <div id="content-day2" class="tab-content">
+                     <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-6 pb-6 border-b border-brass-20">
+                        <div>
+                            <div class="flex items-center gap-2 mb-2">
+                                <span class="font-mono text-10px font-bold bg-ochre text-parchment px-2 py-0.5 rounded-sm">DAY 2</span>
+                            </div>
+                            <h3 class="font-serif text-3xl sm:text-4xl font-black text-granite mb-1">Royal Enclosure & Vittala Temple</h3>
+                        </div>
+                        <div class="flex flex-wrap gap-3 font-mono text-xs">
+                            <div class="flex items-center gap-1.5 px-3 py-1.5 border border-brass-40 rounded-sm bg-white">
+                                <i data-lucide="clock" class="w-3.5 h-3.5 text-ochre"></i> Full Day (8 Hours)
+                            </div>
+                            <div class="flex items-center gap-1.5 px-3 py-1.5 border border-brass-40 rounded-sm bg-white">
+                                <i data-lucide="navigation" class="w-3.5 h-3.5 text-ochre"></i> ~20 to 25 km
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-8">
+                        <div class="relative pl-10 space-y-6 timeline-line">
+                            <!-- Day 2 Spots (8 total) -->
+                            <div class="relative group">
+                                <div class="absolute top-4 w-7 h-7 rounded-full bg-granite border-2 border-ochre flex items-center justify-center text-11px font-mono font-bold text-brass z-10 shadow-sm timeline-badge">1</div>
+                                <div class="bg-white p-4 rounded-xl border border-brass-20 shadow-sm flex flex-col sm:flex-row gap-4 hover-border-ochre-50 transition-colors">
+                                    <img src="./assets/Queens Bath.jpg" class="w-full sm:w-32 h-24 object-cover rounded-lg heritage-img" alt="Queens Bath" />
+                                    <div class="flex-1 flex flex-col justify-center">
+                                        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-1">
+                                            <h5 class="font-serif font-black text-lg text-granite">Queens Bath</h5>
+                                            <span class="text-ochre font-bold font-mono text-11px">Morning</span>
+                                        </div>
+                                        <p class="font-serif text-sm text-granite-70">Ornate royal bathing complex featuring Indo-Islamic architectural elements.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="relative group">
+                                <div class="absolute top-4 w-7 h-7 rounded-full bg-granite border-2 border-ochre flex items-center justify-center text-11px font-mono font-bold text-brass z-10 shadow-sm timeline-badge">2</div>
+                                <div class="bg-white p-4 rounded-xl border border-brass-20 shadow-sm flex flex-col sm:flex-row gap-4 hover-border-ochre-50 transition-colors">
+                                    <img src="./assets/Mahanavami Dibba.jpg" class="w-full sm:w-32 h-24 object-cover rounded-lg heritage-img" alt="Mahanavami Dibba" />
+                                    <div class="flex-1 flex flex-col justify-center">
+                                        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-1">
+                                            <h5 class="font-serif font-black text-lg text-granite">Mahanavami Dibba</h5>
+                                            <span class="text-ochre font-bold font-mono text-11px">Mid-Morning</span>
+                                        </div>
+                                        <p class="font-serif text-sm text-granite-70">The towering ceremonial platform once used by kings to watch state processions.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="relative group">
+                                <div class="absolute top-4 w-7 h-7 rounded-full bg-granite border-2 border-ochre flex items-center justify-center text-11px font-mono font-bold text-brass z-10 shadow-sm timeline-badge">3</div>
+                                <div class="bg-white p-4 rounded-xl border border-brass-20 shadow-sm flex flex-col sm:flex-row gap-4 hover-border-ochre-50 transition-colors">
+                                    <img src="./assets/Stepped Tank (Pushkarani).jpg" class="w-full sm:w-32 h-24 object-cover rounded-lg heritage-img" alt="Stepped Tank" />
+                                    <div class="flex-1 flex flex-col justify-center">
+                                        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-1">
+                                            <h5 class="font-serif font-black text-lg text-granite">Stepped Tank (Pushkarani)</h5>
+                                            <span class="text-ochre font-bold font-mono text-11px">Late Morning</span>
+                                        </div>
+                                        <p class="font-serif text-sm text-granite-70">A mathematically precise, geometrically perfect ancient water aqueduct system.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="relative group">
+                                <div class="absolute top-4 w-7 h-7 rounded-full bg-granite border-2 border-ochre flex items-center justify-center text-11px font-mono font-bold text-brass z-10 shadow-sm timeline-badge">4</div>
+                                <div class="bg-white p-4 rounded-xl border border-brass-20 shadow-sm flex flex-col sm:flex-row gap-4 hover-border-ochre-50 transition-colors">
+                                    <img src="./assets/Hazara Rama Temple.jpg" class="w-full sm:w-32 h-24 object-cover rounded-lg heritage-img" alt="Hazara Rama" />
+                                    <div class="flex-1 flex flex-col justify-center">
+                                        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-1">
+                                            <h5 class="font-serif font-black text-lg text-granite">Hazara Rama Temple</h5>
+                                            <span class="text-ochre font-bold font-mono text-11px">Mid-Day</span>
+                                        </div>
+                                        <p class="font-serif text-sm text-granite-70">The private royal temple, completely covered in exquisite Ramayana stone carvings.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="relative group">
+                                <div class="absolute top-4 w-7 h-7 rounded-full bg-granite border-2 border-ochre flex items-center justify-center text-11px font-mono font-bold text-brass z-10 shadow-sm timeline-badge">5</div>
+                                <div class="bg-white p-4 rounded-xl border border-brass-20 shadow-sm flex flex-col sm:flex-row gap-4 hover-border-ochre-50 transition-colors">
+                                    <img src="./assets/Lotus Mahal.jpg" class="w-full sm:w-32 h-24 object-cover rounded-lg heritage-img" alt="Lotus Mahal" />
+                                    <div class="flex-1 flex flex-col justify-center">
+                                        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-1">
+                                            <h5 class="font-serif font-black text-lg text-granite">Lotus Mahal</h5>
+                                            <span class="text-ochre font-bold font-mono text-11px">Afternoon</span>
+                                        </div>
+                                        <p class="font-serif text-sm text-granite-70">A beautiful symmetrical pavilion in the Zenana enclosure showcasing hybrid architecture.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="relative group">
+                                <div class="absolute top-4 w-7 h-7 rounded-full bg-granite border-2 border-ochre flex items-center justify-center text-11px font-mono font-bold text-brass z-10 shadow-sm timeline-badge">6</div>
+                                <div class="bg-white p-4 rounded-xl border border-brass-20 shadow-sm flex flex-col sm:flex-row gap-4 hover-border-ochre-50 transition-colors">
+                                    <img src="./assets/Elephant Stables.jpg" class="w-full sm:w-32 h-24 object-cover rounded-lg heritage-img" alt="Elephant Stables" />
+                                    <div class="flex-1 flex flex-col justify-center">
+                                        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-1">
+                                            <h5 class="font-serif font-black text-lg text-granite">Elephant Stables</h5>
+                                            <span class="text-ochre font-bold font-mono text-11px">Afternoon</span>
+                                        </div>
+                                        <p class="font-serif text-sm text-granite-70">A grand, domed building that once housed the imperial war elephants of the empire.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="relative group">
+                                <div class="absolute top-4 w-7 h-7 rounded-full bg-granite border-2 border-ochre flex items-center justify-center text-11px font-mono font-bold text-brass z-10 shadow-sm timeline-badge">7</div>
+                                <div class="bg-white p-4 rounded-xl border border-brass-20 shadow-sm flex flex-col sm:flex-row gap-4 hover-border-ochre-50 transition-colors">
+                                    <img src="./assets/Vijaya Vittala Temple.jpg" class="w-full sm:w-32 h-24 object-cover rounded-lg heritage-img" alt="Vijaya Vittala Temple" />
+                                    <div class="flex-1 flex flex-col justify-center">
+                                        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-1">
+                                            <h5 class="font-serif font-black text-lg text-granite">Vijaya Vittala Temple</h5>
+                                            <span class="text-ochre font-bold font-mono text-11px">Late Afternoon</span>
+                                        </div>
+                                        <p class="font-serif text-sm text-granite-70">The pinnacle of Vijayanagara art featuring the world-famous Stone Chariot and Musical Pillars.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="relative group">
+                                <div class="absolute top-4 w-7 h-7 rounded-full bg-granite border-2 border-ochre flex items-center justify-center text-11px font-mono font-bold text-brass z-10 shadow-sm timeline-badge">8</div>
+                                <div class="bg-white p-4 rounded-xl border border-brass-20 shadow-sm flex flex-col sm:flex-row gap-4 hover-border-ochre-50 transition-colors">
+                                    <img src="./assets/Malyavanta Raghunatha Temple.jpg" class="w-full sm:w-32 h-24 object-cover rounded-lg heritage-img" alt="Malyavanta Raghunatha Temple" />
+                                    <div class="flex-1 flex flex-col justify-center">
+                                        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-1">
+                                            <h5 class="font-serif font-black text-lg text-granite">Malyavanta Raghunatha Temple</h5>
+                                            <span class="text-ochre font-bold font-mono text-11px">Evening</span>
+                                        </div>
+                                        <p class="font-serif text-sm text-granite-70">A hilltop temple with continuous ancient chanting and breathtaking sunset views.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ================= DAY 3 ================= -->
+                <div id="content-day3" class="tab-content">
+                    <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-6 pb-6 border-b border-brass-20">
+                        <div>
+                            <div class="flex items-center gap-2 mb-2">
+                                <span class="font-mono text-10px font-bold bg-ochre text-parchment px-2 py-0.5 rounded-sm">DAY 3</span>
+                            </div>
+                            <h3 class="font-serif text-3xl sm:text-4xl font-black text-granite mb-1">Anegundi & Sanapur Lake</h3>
+                        </div>
+                        <div class="flex flex-wrap gap-3 font-mono text-xs">
+                            <div class="flex items-center gap-1.5 px-3 py-1.5 border border-brass-40 rounded-sm bg-white">
+                                <i data-lucide="clock" class="w-3.5 h-3.5 text-ochre"></i> Dawn to Dusk
+                            </div>
+                            <div class="flex items-center gap-1.5 px-3 py-1.5 border border-brass-40 rounded-sm bg-white">
+                                <i data-lucide="navigation" class="w-3.5 h-3.5 text-ochre"></i> ~35 to 45 km
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-8">
+                        <div class="relative pl-10 space-y-6 timeline-line">
+                            <!-- Day 3 Spots (6 total) -->
+                            <div class="relative group">
+                                <div class="absolute top-4 w-7 h-7 rounded-full bg-granite border-2 border-ochre flex items-center justify-center text-11px font-mono font-bold text-brass z-10 shadow-sm timeline-badge">1</div>
+                                <div class="bg-white p-4 rounded-xl border border-brass-20 shadow-sm flex flex-col sm:flex-row gap-4 hover-border-ochre-50 transition-colors">
+                                    <img src="./assets/Anjanadri Hill (Hanuman Temple).jpg" class="w-full sm:w-32 h-24 object-cover rounded-lg heritage-img" alt="Anjanadri Hill" />
+                                    <div class="flex-1 flex flex-col justify-center">
+                                        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-1">
+                                            <h5 class="font-serif font-black text-lg text-granite">Anjanadri Hill (Hanuman Temple)</h5>
+                                            <span class="text-ochre font-bold font-mono text-11px">Sunrise</span>
+                                        </div>
+                                        <p class="font-serif text-sm text-granite-70">A magical sunrise climb with 575 steps leading to the reputed birthplace of Hanuman.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="relative group">
+                                <div class="absolute top-4 w-7 h-7 rounded-full bg-granite border-2 border-ochre flex items-center justify-center text-11px font-mono font-bold text-brass z-10 shadow-sm timeline-badge">2</div>
+                                <div class="bg-white p-4 rounded-xl border border-brass-20 shadow-sm flex flex-col sm:flex-row gap-4 hover-border-ochre-50 transition-colors">
+                                    <img src="./assets/Pampa Sarovar.jpg" class="w-full sm:w-32 h-24 object-cover rounded-lg heritage-img" alt="Pampa Sarovar" />
+                                    <div class="flex-1 flex flex-col justify-center">
+                                        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-1">
+                                            <h5 class="font-serif font-black text-lg text-granite">Pampa Sarovar</h5>
+                                            <span class="text-ochre font-bold font-mono text-11px">Morning</span>
+                                        </div>
+                                        <p class="font-serif text-sm text-granite-70">A sacred mythological pond surrounded by ancient cave shrines and lotus blooms.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="relative group">
+                                <div class="absolute top-4 w-7 h-7 rounded-full bg-granite border-2 border-ochre flex items-center justify-center text-11px font-mono font-bold text-brass z-10 shadow-sm timeline-badge">3</div>
+                                <div class="bg-white p-4 rounded-xl border border-brass-20 shadow-sm flex flex-col sm:flex-row gap-4 hover-border-ochre-50 transition-colors">
+                                    <img src="./assets/Chintamani Temple.jpg" class="w-full sm:w-32 h-24 object-cover rounded-lg heritage-img" alt="Chintamani Temple" />
+                                    <div class="flex-1 flex flex-col justify-center">
+                                        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-1">
+                                            <h5 class="font-serif font-black text-lg text-granite">Chintamani Temple</h5>
+                                            <span class="text-ochre font-bold font-mono text-11px">Mid-Morning</span>
+                                        </div>
+                                        <p class="font-serif text-sm text-granite-70">A quiet riverside temple cave complex steeped in Ramayana folklore.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="relative group">
+                                <div class="absolute top-4 w-7 h-7 rounded-full bg-granite border-2 border-ochre flex items-center justify-center text-11px font-mono font-bold text-brass z-10 shadow-sm timeline-badge">4</div>
+                                <div class="bg-white p-4 rounded-xl border border-brass-20 shadow-sm flex flex-col sm:flex-row gap-4 hover-border-ochre-50 transition-colors">
+                                    <img src="./assets/Anegundi Village.jpg" class="w-full sm:w-32 h-24 object-cover rounded-lg heritage-img" alt="Anegundi Village" />
+                                    <div class="flex-1 flex flex-col justify-center">
+                                        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-1">
+                                            <h5 class="font-serif font-black text-lg text-granite">Anegundi Village</h5>
+                                            <span class="text-ochre font-bold font-mono text-11px">Mid-Day</span>
+                                        </div>
+                                        <p class="font-serif text-sm text-granite-70">Explore the rustic lanes of the ancient capital, far older than Hampi itself.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="relative group">
+                                <div class="absolute top-4 w-7 h-7 rounded-full bg-granite border-2 border-ochre flex items-center justify-center text-11px font-mono font-bold text-brass z-10 shadow-sm timeline-badge">5</div>
+                                <div class="bg-white p-4 rounded-xl border border-brass-20 shadow-sm flex flex-col sm:flex-row gap-4 hover-border-ochre-50 transition-colors">
+                                    <img src="./assets/Sanapur Lake.jpg" class="w-full sm:w-32 h-24 object-cover rounded-lg heritage-img" alt="Sanapur Lake" />
+                                    <div class="flex-1 flex flex-col justify-center">
+                                        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-1">
+                                            <h5 class="font-serif font-black text-lg text-granite">Sanapur Lake</h5>
+                                            <span class="text-ochre font-bold font-mono text-11px">Afternoon</span>
+                                        </div>
+                                        <p class="font-serif text-sm text-granite-70">A breathtaking reservoir surrounded by boulders. Enjoy an iconic circular coracle ride.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="relative group">
+                                <div class="absolute top-4 w-7 h-7 rounded-full bg-granite border-2 border-ochre flex items-center justify-center text-11px font-mono font-bold text-brass z-10 shadow-sm timeline-badge">6</div>
+                                <div class="bg-white p-4 rounded-xl border border-brass-20 shadow-sm flex flex-col sm:flex-row gap-4 hover-border-ochre-50 transition-colors">
+                                    <img src="./assets/Tungabhadra River sunset point.jpg" class="w-full sm:w-32 h-24 object-cover rounded-lg heritage-img" alt="Tungabhadra River" />
+                                    <div class="flex-1 flex flex-col justify-center">
+                                        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-1">
+                                            <h5 class="font-serif font-black text-lg text-granite">Tungabhadra River sunset point</h5>
+                                            <span class="text-ochre font-bold font-mono text-11px">Evening</span>
+                                        </div>
+                                        <p class="font-serif text-sm text-granite-70">A peaceful end to the journey watching the sun set over the flowing river.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. ARCHIVAL PHOTO GALLERY -->
+    <section class="py-20 border-b border-brass-20 bg-granite-5">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="font-serif text-3xl sm:text-4xl font-black text-granite mb-4">
+                    Archival Field Plates
+                </h2>
+                <div class="h-px w-24 bg-ochre mx-auto"></div>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 px-4 sm:px-0">
+                <div class="polaroid bg-polaroid p-3 pb-6 shadow-xl border border-granite-10 rotate-neg-2">
+                    <div class="overflow-hidden border border-granite-20 mb-3 aspect-4-3 bg-gray-200">
+                        <img src="./assets/Garuda Stone Chariot.jpg" alt="Stone Chariot" class="w-full h-full object-cover heritage-img"/>
+                    </div>
+                    <h4 class="font-serif font-bold text-granite text-sm">Garuda Stone Chariot</h4>
+                </div>
+
+                <div class="polaroid bg-polaroid p-3 pb-6 shadow-xl border border-granite-10 rotate-1">
+                    <div class="overflow-hidden border border-granite-20 mb-3 aspect-4-3 bg-gray-200">
+                        <img src="./assets/Indo-Islamic Archways.jpg"" alt="Lotus Mahal" class="w-full h-full object-cover heritage-img"/>
+                    </div>
+                    <h4 class="font-serif font-bold text-granite text-sm">Indo-Islamic Archways</h4>
+                </div>
+
+                <div class="polaroid bg-polaroid p-3 pb-6 shadow-xl border border-granite-10 rotate-neg-1-5">
+                    <div class="overflow-hidden border border-granite-20 mb-3 aspect-4-3 bg-gray-200">
+                        <img src="./assets/Hemakuta Boulders at Dusk.jpg" alt="Boulder Ocean Sunset" class="w-full h-full object-cover heritage-img"/>
+                    </div>
+                    <h4 class="font-serif font-bold text-granite text-sm">Hemakuta Boulders at Dusk</h4>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. TRAVELER CHRONICLES (TESTIMONIALS) -->
+    <section class="py-24 bg-parchment">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- Card 1 -->
+                <div class="bg-card border border-granite-80 rounded-2xl p-6 shadow-sm flex flex-col justify-between h-full">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="inline-block px-2 py-1 text-10px font-mono font-bold text-testimonial-badge bg-testimonial-badge border border-testimonial-badge rounded">
+                                Verified International Pass
+                            </span>
+                            <span class="font-mono text-10px text-granite-50">November 2024</span>
+                        </div>
+                        <p class="font-serif italic text-sm text-granite-80 leading-relaxed mb-8">
+                            "We avoided every typical tourist hassle because of Manju. His auto is spotlessly maintained, he carried extra water flasks, and his historical insights at Hazara Rama brought the stone carvings to life like an open history book."
+                        </p>
+                    </div>
+                    <div class="pt-4 border-t border-granite-10">
+                        <h4 class="font-serif font-black text-granite text-sm">Claire & Thomas Vane</h4>
+                        <p class="font-mono text-10px text-granite-50 mt-1">Edinburgh, Scotland</p>
+                        <p class="font-mono text-10px font-bold text-testimonial-badge mt-2">Circuit: Day 1 & Day 2 Complete</p>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="bg-card border border-granite-80 rounded-2xl p-6 shadow-sm flex flex-col justify-between h-full">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="inline-block px-2 py-1 text-10px font-mono font-bold text-testimonial-badge bg-testimonial-badge border border-testimonial-badge rounded">
+                                Family Tour Verified
+                            </span>
+                            <span class="font-mono text-10px text-granite-50">January 2025</span>
+                        </div>
+                        <p class="font-serif italic text-sm text-granite-80 leading-relaxed mb-8">
+                            "Travelling with our 7-year-old and senior parents was daunting across the boulder heat. Manju planned each stop with shady resting pavilions, smooth driving, and punctual station pickup at Hospet at 5:00 AM."
+                        </p>
+                    </div>
+                    <div class="pt-4 border-t border-granite-10">
+                        <h4 class="font-serif font-black text-granite text-sm">Vikram & Ananya Sen</h4>
+                        <p class="font-mono text-10px text-granite-50 mt-1">Kolkata, India</p>
+                        <p class="font-mono text-10px font-bold text-testimonial-badge mt-2">Circuit: Sacred Center + Sunrise</p>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="bg-card border border-granite-80 rounded-2xl p-6 shadow-sm flex flex-col justify-between h-full">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="inline-block px-2 py-1 text-10px font-mono font-bold text-testimonial-badge bg-testimonial-badge border border-testimonial-badge rounded">
+                                Heritage Scholar Review
+                            </span>
+                            <span class="font-mono text-10px text-granite-50">December 2024</span>
+                        </div>
+                        <p class="font-serif italic text-sm text-granite-80 leading-relaxed mb-8">
+                            "As an architect, I wanted to study the stone joinery of the Vijayanagara masonry. Manju knew hidden, quiet ruins that no generic tour agency ever mentions. Pure authenticity."
+                        </p>
+                    </div>
+                    <div class="pt-4 border-t border-granite-10">
+                        <h4 class="font-serif font-black text-granite text-sm">Matteo Bianchi</h4>
+                        <p class="font-mono text-10px text-granite-50 mt-1">Florence, Italy</p>
+                        <p class="font-mono text-10px font-bold text-testimonial-badge mt-2">Circuit: Vittala & Anegundi</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. FOOTER -->
+    <footer class="bg-footer text-parchment py-16 border-t-4 border-ochre">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12 lg:gap-8">
+                <!-- Brand -->
+                <div class="md:col-span-1">
+                    <div class="flex items-center gap-3 mb-4">
+                        <span class="font-serif font-black text-xl tracking-wide text-parchment">
+                            HAMPI MANJU AUTO SERVICE
+                        </span>
+                        <span class="font-mono text-9px uppercase font-bold text-white bg-ochre px-2 py-1 rounded-sm shrink-0">
+                            LOCAL PARTNER
+                        </span>
+                    </div>
+                    <p class="font-serif text-13px text-parchment-70 leading-relaxed mb-6">
+                        Dedicated auto rickshaw touring and private cultural interpretation across the UNESCO ruins of the Vijayanagara Empire.
+                    </p>
+                    <p class="font-mono text-xs text-ochre font-semibold">
+                        Direct Line: +91 86607 30121 • Available 05:00 AM – 09:30 PM
+                    </p>
+                </div>
+
+                <!-- Hubs -->
+                <div class="md:col-span-1 md:pl-10">
+                    <h4 class="font-mono text-11px font-bold uppercase tracking-widest text-parchment mb-4">
+                        KEY DEPARTURE HUBS
+                    </h4>
+                    <ul class="space-y-3 font-mono text-11px text-parchment-60">
+                        <li class="flex gap-2"><span>•</span> Hospet Junction Railway (Station Pick-up)</li>
+                        <li class="flex gap-2"><span>•</span> Kamalapura Palace & KSTDC Resorts</li>
+                        <li class="flex gap-2"><span>•</span> Hampi Bazaar & Virupaksha Ghats</li>
+                        <li class="flex gap-2"><span>•</span> Sanapur Lake & Anegundi Gate</li>
+                    </ul>
+                </div>
+
+                <!-- Etiquette -->
+                <div class="md:col-span-1">
+                    <h4 class="font-mono text-11px font-bold uppercase tracking-widest text-parchment mb-4">
+                        CULTURAL ETIQUETTE
+                    </h4>
+                    <p class="font-serif text-13px text-parchment-70 leading-relaxed">
+                        Active worship takes place at Virupaksha and Malyavanta. Footwear removal and respectful dress is appreciated. Manju will assist at every shrine.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- 7. MOBILE CTA (Sticky Bottom Bar) -->
+    <aside class="md:hidden fixed bottom-0 left-0 right-0 z-50 bg-mobile-cta backdrop-blur-md border-t border-brass shadow-mobile-nav p-3">
+        <div class="grid grid-cols-2 gap-3">
+            <a href="tel:+918660730121" class="flex flex-col items-center justify-center py-2 px-2 bg-transparent border border-brass text-brass rounded-sm active-bg-brass-10 transition-colors">
+                <i data-lucide="phone" class="w-4 h-4 mb-1"></i>
+                <span class="font-mono font-bold text-10px uppercase tracking-wider">Call Guide</span>
+            </a>
+            <a href="https://wa.me/918660730121" target="_blank" class="flex flex-col items-center justify-center py-2 px-2 bg-ochre text-parchment rounded-sm shadow-md active-bg-ochre-dark transition-colors">
+                <i data-lucide="message-circle" class="w-4 h-4 mb-1"></i>
+                <span class="font-mono font-bold text-10px uppercase tracking-wider">WhatsApp</span>
+            </a>
+        </div>
+    </aside>
+
+    <!-- INTERACTIVE JAVASCRIPT -->
+    <script>
+        // Initialize Lucide Icons
+        lucide.createIcons();
+
+        // Expedition Tabs Logic
+        function switchTab(tabId) {
+            // Hide all tab contents
+            document.querySelectorAll('.tab-content').forEach(content => {
+                content.classList.remove('active');
+            });
+            // Reset all buttons styling
+            document.querySelectorAll('.tab-btn').forEach(btn => {
+                btn.classList.remove('bg-parchment', 'border-brass', 'shadow-sm', 'text-granite');
+                btn.classList.add('bg-transparent', 'border-transparent', 'text-granite-60');
+            });
+
+            // Activate specific content
+            document.getElementById('content-' + tabId).classList.add('active');
+            
+            // Activate specific button
+            const activeBtn = document.getElementById('btn-' + tabId);
+            activeBtn.classList.remove('bg-transparent', 'border-transparent', 'text-granite-60');
+            activeBtn.classList.add('bg-parchment', 'border-brass', 'shadow-sm', 'text-granite');
+        }
+    </script>
+</body>
+</html>
