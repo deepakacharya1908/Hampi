@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en" class="scroll-smooth scroll-pt-24 sm:scroll-pt-28">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,10 +12,10 @@
     <!-- Font Awesome Icons -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
 
-    <!-- Google Fonts: Cormorant Garamond, Plus Jakarta Sans & Space Grotesk -->
+    <!-- Google Fonts: Inter & JetBrains Mono -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;0,700;1,600;1,700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@500;600;700;800&display=swap" rel="stylesheet">
 
     <script>
         tailwind.config = {
@@ -25,9 +25,9 @@
                         'xs': '420px',
                     },
                     fontFamily: {
-                        serif: ['"Cormorant Garamond"', 'Georgia', 'serif'],
-                        sans: ['"Plus Jakarta Sans"', 'system-ui', 'sans-serif'],
-                        mono: ['"Space Grotesk"', 'monospace'],
+                        serif: ['"Inter"', 'system-ui', '-apple-system', 'sans-serif'],
+                        sans: ['"Inter"', 'system-ui', '-apple-system', 'sans-serif'],
+                        mono: ['"JetBrains Mono"', 'monospace'],
                     },
                     colors: {
                         ivory: {
@@ -163,56 +163,55 @@
     <!-- Sticky Glassmorphic Navigation Bar -->
     <header class="sticky top-0 z-40 bg-ivory-50/95 backdrop-blur-md border-b border-ivory-200 transition-all duration-300">
         <div class="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center h-15 sm:h-20 gap-2">
-                <!-- Brand Logo -->
-                <a href="#" class="flex items-center gap-2 sm:gap-3.5 group min-w-0">
-                    <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-2xl bg-gradient-to-br from-crimson-700 via-crimson-800 to-peacock-900 flex items-center justify-center text-saffron-400 shadow-md shrink-0 border border-saffron-400/30">
-                        <i class="fa-solid fa-gopuram text-lg sm:text-xl"></i>
+            <div class="flex justify-between items-center min-h-[58px] sm:min-h-[72px] lg:h-20 py-2 sm:py-0 gap-2 sm:gap-4">
+                <!-- Brand Logo (Protected from shrinking) -->
+                <a href="#" class="flex items-center gap-2 sm:gap-3 group shrink-0">
+                    <div class="w-9 h-9 sm:w-11 sm:h-11 rounded-xl sm:rounded-2xl bg-gradient-to-br from-crimson-700 via-crimson-800 to-peacock-900 flex items-center justify-center text-saffron-400 shadow-sm shrink-0 border border-saffron-400/30">
+                        <i class="fa-solid fa-gopuram text-base sm:text-lg"></i>
                     </div>
-                    <div class="min-w-0">
+                    <div class="flex flex-col justify-center">
                         <div class="flex items-center gap-1.5">
-                            <span id="brand-title" class="font-serif font-bold text-base sm:text-2xl lg:text-3xl tracking-tight text-ivory-900 leading-none whitespace-nowrap">Hampi Manju</span>
+                            <span id="brand-title" class="font-bold text-base sm:text-lg lg:text-xl tracking-tight text-ivory-900 leading-snug whitespace-nowrap">Hampi Manju</span>
                             <span class="hidden sm:inline-block px-1.5 py-0.5 text-[10px] font-mono font-extrabold uppercase tracking-widest bg-saffron-100 text-crimson-800 rounded border border-saffron-400/50 shrink-0">KA35 AA 4376</span>
                         </div>
-                        <p id="brand-subtitle" class="text-[10px] sm:text-xs text-stone-600 font-medium tracking-wide mt-0.5 truncate">
-                            <span class="sm:hidden font-mono font-bold text-crimson-700">KA35 AA 4376 • </span>5.0★ Google Rated Local Auto Guide
+                        <p id="brand-subtitle" class="text-[10px] sm:text-xs text-stone-600 font-medium tracking-normal mt-0.5 truncate max-w-[120px] xs:max-w-[170px] sm:max-w-none">
+                            <span class="sm:hidden font-mono font-bold text-crimson-700">KA35 • </span>5.0★ Local Auto Guide
                         </p>
                     </div>
                 </a>
 
-                <!-- Desktop Navigation Links -->
-                <nav class="hidden xl:flex items-center gap-6 text-sm font-bold text-stone-700">
-                    <a href="#packages" class="hover:text-crimson-700 transition-colors">6 Tour Packages</a>
-                    <a href="#explore-hampi" class="hover:text-crimson-700 transition-colors">UNESCO & Beyond</a>
-                    <a href="#itinerary" class="hover:text-crimson-700 transition-colors">25-Spot Route</a>
-                    <a href="#train-guide" class="hover:text-crimson-700 transition-colors">Train Guide</a>
-                    <a href="#guide-story" class="hover:text-crimson-700 transition-colors">Meet Manju</a>
-                    <a href="#reviews" class="hover:text-crimson-700 transition-colors">5.0★ Reviews</a>
-                    <a href="#contact" class="hover:text-crimson-700 transition-colors">Google Map</a>
+                <!-- Desktop Navigation Links (Compact & Never Overlapping) -->
+                <nav class="hidden lg:flex items-center gap-1.5 xl:gap-3 text-xs font-semibold text-stone-700 shrink-0">
+                    <a href="#packages" class="px-2 py-1 rounded-lg hover:text-crimson-700 hover:bg-ivory-200/60 transition-colors whitespace-nowrap">Packages</a>
+                    <a href="#explore-hampi" class="px-2 py-1 rounded-lg hover:text-crimson-700 hover:bg-ivory-200/60 transition-colors whitespace-nowrap">Highlights</a>
+                    <a href="#itinerary" class="px-2 py-1 rounded-lg hover:text-crimson-700 hover:bg-ivory-200/60 transition-colors whitespace-nowrap">25 Spots</a>
+                    <a href="#train-guide" class="px-2 py-1 rounded-lg hover:text-crimson-700 hover:bg-ivory-200/60 transition-colors whitespace-nowrap">Train Guide</a>
+                    <a href="#guide-story" class="px-2 py-1 rounded-lg hover:text-crimson-700 hover:bg-ivory-200/60 transition-colors whitespace-nowrap">Meet Manju</a>
+                    <a href="#reviews" class="px-2 py-1 rounded-lg hover:text-crimson-700 hover:bg-ivory-200/60 transition-colors whitespace-nowrap">5.0★ Reviews</a>
                 </nav>
 
-                <!-- Action CTAs -->
+                <!-- Action CTAs (Protected from shrinking) -->
                 <div class="flex items-center gap-1.5 sm:gap-2 shrink-0">
-                    <!-- Custom Route Counter (Desktop/Tablet) -->
-                    <button onclick="toggleCustomDrawer()" class="hidden md:inline-flex relative items-center gap-1.5 px-3 py-2 sm:px-3.5 sm:py-2.5 rounded-xl bg-ivory-100 hover:bg-ivory-200 active:scale-95 text-ivory-900 border border-ivory-300 text-xs sm:text-sm font-bold transition-all min-h-[42px]" title="View Your Custom Hampi Route">
+                    <!-- Custom Route Counter -->
+                    <button onclick="toggleCustomDrawer()" class="hidden sm:inline-flex relative items-center gap-1.5 px-3 py-2 rounded-xl bg-ivory-100 hover:bg-ivory-200 active:scale-95 text-ivory-900 border border-ivory-300 text-xs font-semibold transition-all min-h-[36px] sm:min-h-[40px]" title="View Your Custom Hampi Route">
                         <i class="fa-solid fa-route text-crimson-700"></i>
                         <span>My Route</span>
                         <span id="route-count-badge" class="px-1.5 py-0.5 text-[11px] font-mono font-bold rounded-full bg-crimson-700 text-white">6</span>
                     </button>
 
-                    <!-- Advance Booking Modal Trigger -->
-                    <button onclick="openAdvanceBookingModal()" class="hidden sm:inline-flex items-center gap-1.5 px-4 py-2.5 rounded-xl bg-peacock-800 hover:bg-peacock-900 text-saffron-400 text-xs sm:text-sm font-bold shadow-sm transition-all min-h-[42px]">
+                    <!-- Advance Booking Trigger (shown on xl+) -->
+                    <button onclick="openAdvanceBookingModal()" class="hidden xl:inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-peacock-800 hover:bg-peacock-900 text-saffron-400 text-xs font-semibold shadow-sm transition-all min-h-[36px] sm:min-h-[40px]">
                         <i class="fa-regular fa-calendar-check"></i>
-                        <span>Book in Advance</span>
+                        <span>Advance Booking</span>
                     </button>
 
                     <!-- Quick Call on Mobile -->
-                    <a href="tel:+918660730121" class="sm:hidden inline-flex items-center justify-center w-9 h-9 rounded-xl bg-crimson-50 text-crimson-700 border border-crimson-200 active:scale-95 transition-all" title="Call Manju">
+                    <a href="tel:+918660730121" class="sm:hidden inline-flex items-center justify-center w-8 h-8 rounded-xl bg-crimson-50 text-crimson-700 border border-crimson-200 active:scale-95 transition-all shrink-0" title="Call Manju">
                         <i class="fa-solid fa-phone text-xs"></i>
                     </a>
 
                     <!-- Direct WhatsApp CTA -->
-                    <button onclick="openDirectWhatsApp('Hi! I would like to book a Hampi Auto Rickshaw Tour.')" class="inline-flex items-center gap-1.5 px-3 sm:px-4 py-2 sm:py-2.5 rounded-xl bg-[#1E7E34] hover:bg-[#166528] active:scale-95 text-white text-xs sm:text-sm font-bold shadow-md transition-all min-h-[38px] sm:min-h-[42px]">
+                    <button onclick="openDirectWhatsApp('Hi! I would like to book a Hampi Auto Rickshaw Tour.')" class="inline-flex items-center gap-1.5 px-3 sm:px-4 py-2 rounded-xl bg-[#1E7E34] hover:bg-[#166528] active:scale-95 text-white text-xs sm:text-sm font-semibold shadow-md transition-all min-h-[36px] sm:min-h-[40px] shrink-0">
                         <i class="fa-brands fa-whatsapp text-sm sm:text-base"></i>
                         <span>Book Tour</span>
                     </button>
@@ -337,36 +336,36 @@
                         <div class="absolute inset-0 bg-gradient-to-t from-peacock-950/95 via-peacock-950/30 to-transparent"></div>
 
                         <!-- Top Floating Badges -->
-                        <div class="absolute top-4 left-4 right-4 flex justify-between items-center gap-2">
-                            <span class="px-3.5 py-1.5 rounded-full bg-peacock-950/80 backdrop-blur-md text-saffron-400 text-xs font-mono font-bold tracking-wider uppercase border border-white/15">
+                        <div class="absolute top-2.5 left-2.5 right-2.5 sm:top-4 sm:left-4 sm:right-4 flex justify-between items-center gap-2">
+                            <span class="px-2.5 py-1 sm:px-3.5 sm:py-1.5 rounded-full bg-peacock-950/80 backdrop-blur-md text-saffron-400 text-[10px] sm:text-xs font-mono font-bold tracking-wider uppercase border border-white/15">
                                 <i class="fa-solid fa-award mr-1"></i> Trusted Since 2015
                             </span>
-                            <button onclick="openAdvanceBookingModal()" class="px-3.5 py-1.5 rounded-full bg-saffron-500 hover:bg-saffron-400 text-ivory-900 font-extrabold text-xs shadow transition-colors">
+                            <button onclick="openAdvanceBookingModal()" class="px-2.5 py-1 sm:px-3.5 sm:py-1.5 rounded-full bg-saffron-500 hover:bg-saffron-400 text-ivory-900 font-extrabold text-[10px] sm:text-xs shadow transition-colors">
                                 📅 Book in Advance
                             </button>
                         </div>
 
-                        <!-- Bottom Floating Guide Identity Card -->
-                        <div class="absolute bottom-4 left-4 right-4 bg-ivory-50/95 backdrop-blur-md p-5 rounded-2xl border border-ivory-200 shadow-xl">
-                            <div class="flex items-start justify-between gap-3">
-                                <div>
-                                    <span class="inline-block px-2.5 py-0.5 rounded bg-saffron-400 text-ivory-900 font-mono font-extrabold text-[10px] uppercase tracking-wider mb-1">
+                        <!-- Bottom Floating Guide Identity Card (Compact on Mobile, Full on Desktop) -->
+                        <div class="absolute bottom-2 left-2 right-2 sm:bottom-4 sm:left-4 sm:right-4 bg-ivory-50/90 sm:bg-ivory-50/95 backdrop-blur-md p-3 sm:p-5 rounded-xl sm:rounded-2xl border border-ivory-200/80 shadow-lg">
+                            <div class="flex items-center sm:items-start justify-between gap-2.5 sm:gap-3">
+                                <div class="min-w-0">
+                                    <span class="inline-block px-2 py-0.5 rounded bg-saffron-400 text-ivory-900 font-mono font-extrabold text-[9px] sm:text-[10px] uppercase tracking-wider mb-0.5 sm:mb-1">
                                         🌅 Sunrise & Heritage Specialist
                                     </span>
-                                    <h3 class="font-serif font-bold text-2xl text-ivory-900 leading-tight">
+                                    <h3 class="font-bold text-sm sm:text-xl lg:text-2xl text-ivory-900 leading-snug truncate sm:whitespace-normal">
                                         Every Stone, Every Story, Every Sunrise
                                     </h3>
-                                    <p class="text-xs text-stone-600 mt-1">
+                                    <p class="text-[10px] sm:text-xs text-stone-600 mt-0.5 sm:mt-1 truncate sm:whitespace-normal">
                                         Speaks English · Hindi · Kannada · Telugu · Tamil
                                     </p>
                                 </div>
                                 <!-- Yellow & Black License Plate Replica -->
-                                <div class="bg-[#FACC15] border-2 border-ivory-900 px-2.5 py-1.5 rounded-xl text-center shrink-0 shadow-inner">
-                                    <div class="text-[8px] font-mono font-bold text-ivory-900 leading-none">IND • KA</div>
-                                    <div class="text-xs font-mono font-extrabold text-ivory-900 tracking-tighter leading-tight mt-0.5">KA35 AA<br>4376</div>
+                                <div class="bg-[#FACC15] border sm:border-2 border-ivory-900 px-2 py-1 sm:px-2.5 sm:py-1.5 rounded-lg sm:rounded-xl text-center shrink-0 shadow-inner">
+                                    <div class="text-[7px] sm:text-[8px] font-mono font-bold text-ivory-900 leading-none">IND • KA</div>
+                                    <div class="text-[10px] sm:text-xs font-mono font-extrabold text-ivory-900 tracking-tighter leading-tight mt-0.5">KA35 AA<br>4376</div>
                                 </div>
                             </div>
-                            <div class="mt-3.5 pt-3 border-t border-ivory-200 flex items-center justify-between text-xs">
+                            <div class="hidden sm:flex mt-3.5 pt-3 border-t border-ivory-200 items-center justify-between text-xs">
                                 <span class="font-bold text-peacock-800 flex items-center gap-1.5">
                                     <i class="fa-solid fa-circle-check text-emerald-600"></i> Hosapete Rly Pickup Included
                                 </span>
@@ -876,11 +875,11 @@
                 <div class="flex items-center justify-between sm:justify-end gap-2 bg-ivory-100 p-1.5 rounded-2xl border border-ivory-300 self-start md:self-auto w-full sm:w-auto">
                     <span class="text-[11px] font-bold uppercase tracking-wider text-stone-500 pl-2.5 sm:hidden">View:</span>
                     <div class="flex items-center gap-1">
-                        <button id="view-btn-grid" onclick="setViewMode('grid')" class="px-3 py-1.5 rounded-xl text-xs font-bold transition-all bg-crimson-700 text-white shadow-sm flex items-center gap-1.5 min-h-[36px]">
+                        <button id="view-btn-grid" onclick="setViewMode('grid')" class="px-3 py-1.5 rounded-xl text-xs font-bold transition-all text-stone-700 hover:bg-ivory-200 flex items-center gap-1.5 min-h-[36px]">
                             <i class="fa-solid fa-grip"></i>
                             <span>Photo Cards</span>
                         </button>
-                        <button id="view-btn-compact" onclick="setViewMode('compact')" class="px-3 py-1.5 rounded-xl text-xs font-bold transition-all text-stone-700 hover:bg-ivory-200 flex items-center gap-1.5 min-h-[36px]">
+                        <button id="view-btn-compact" onclick="setViewMode('compact')" class="px-3 py-1.5 rounded-xl text-xs font-bold transition-all bg-crimson-700 text-white shadow-sm flex items-center gap-1.5 min-h-[36px]">
                             <i class="fa-solid fa-list-check"></i>
                             <span>Quick Checklist</span>
                         </button>
@@ -923,8 +922,8 @@
                 </div>
             </div>
 
-            <!-- Dynamic 25-Card Grid -->
-            <div id="itinerary-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
+            <!-- Dynamic 25-Card Grid (Default: Quick Checklist) -->
+            <div id="itinerary-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
                 <!-- Populated dynamically via JS -->
             </div>
 
@@ -1761,7 +1760,7 @@
 
         let activeFilter = 'all';
         let searchQuery = '';
-        let viewMode = 'grid';
+        let viewMode = 'compact';
         let customRouteIds = new Set([1, 10, 14, 17, 20, 25]);
         let currentLightboxIndex = 0;
 
