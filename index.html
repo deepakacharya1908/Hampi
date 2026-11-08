@@ -146,8 +146,12 @@
                 </span>
             </div>
 
-            <!-- Right: Official Vehicle Badge, Google Maps Link & Phone -->
+            <!-- Right: Official Vehicle Badge, Google Maps Link, Instagram & Phone -->
             <div class="flex items-center gap-2 sm:gap-3 shrink-0 ml-auto">
+                <a href="https://www.instagram.com/hampi__manju?utm_source=qr&cplk=MTN6YjR4cmhnZXp6ZQ==" target="_blank" rel="noopener noreferrer" class="hidden sm:inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-pink-950/70 hover:bg-pink-900/80 border border-pink-700/60 text-[11px] text-pink-300 font-bold transition-colors" title="Follow Manju on Instagram">
+                    <i class="fa-brands fa-instagram text-pink-400"></i>
+                    <span>@hampi__manju</span>
+                </a>
                 <a href="https://share.google/g6sDrVKlK3OyQ2spP" target="_blank" rel="noopener noreferrer" class="hidden md:inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-peacock-900 hover:bg-peacock-800 border border-peacock-700 text-[11px] text-saffron-300 font-bold transition-colors">
                     <i class="fa-solid fa-location-dot text-crimson-500"></i>
                     <span>Google Maps Verified • KA35 AA 4376</span>
@@ -199,6 +203,11 @@
                         <span id="route-count-badge" class="px-1.5 py-0.5 text-[11px] font-mono font-bold rounded-full bg-crimson-700 text-white">6</span>
                     </button>
 
+                    <!-- Instagram Profile -->
+                    <a href="https://www.instagram.com/hampi__manju?utm_source=qr&cplk=MTN6YjR4cmhnZXp6ZQ==" target="_blank" rel="noopener noreferrer" class="hidden sm:inline-flex items-center justify-center w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-gradient-to-br from-[#833ab4] via-[#fd1d1d] to-[#fcb045] text-white hover:opacity-90 active:scale-95 shadow-sm transition-all shrink-0" title="Follow @hampi__manju on Instagram">
+                        <i class="fa-brands fa-instagram text-base sm:text-lg"></i>
+                    </a>
+
                     <!-- Advance Booking Trigger (shown on xl+) -->
                     <button onclick="openAdvanceBookingModal()" class="hidden xl:inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-peacock-800 hover:bg-peacock-900 text-saffron-400 text-xs font-semibold shadow-sm transition-all min-h-[36px] sm:min-h-[40px]">
                         <i class="fa-regular fa-calendar-check"></i>
@@ -221,81 +230,65 @@
     </header>
 
     <!-- Hero Section: Vibrant Vijayanagara Sunset & Sandstone Editorial Layout -->
-    <section class="relative pt-6 pb-12 sm:pt-12 sm:pb-20 lg:pt-16 lg:pb-24 bg-heritage-mesh border-b border-ivory-200 overflow-hidden">
+    <section class="relative pt-4 pb-8 sm:pt-10 sm:pb-20 lg:pt-14 lg:pb-24 bg-heritage-mesh border-b border-ivory-200 overflow-hidden">
         <!-- Decorative Ambient Glows -->
         <div class="absolute -top-24 -right-24 w-80 sm:w-96 h-80 sm:h-96 rounded-full bg-saffron-400/20 blur-3xl pointer-events-none"></div>
         <div class="absolute top-1/2 -left-24 w-80 sm:w-96 h-80 sm:h-96 rounded-full bg-crimson-500/10 blur-3xl pointer-events-none"></div>
 
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+            <div class="flex flex-col lg:grid lg:grid-cols-12 gap-5 sm:gap-6 lg:gap-10 items-start">
                 
-                <!-- Left Column: Headline, Trust Badges, Stats & Quick Advance Booking (7 Cols) -->
-                <div class="lg:col-span-7 space-y-5 sm:space-y-6">
+                <!-- 1. Headline & Trust Strip (Order 1 on mobile, 7 cols on desktop) -->
+                <div class="w-full lg:col-span-7 space-y-2.5 sm:space-y-3.5 order-1">
                     
                     <!-- Top Trust Pill Strip -->
                     <div class="flex flex-wrap items-center gap-1.5 sm:gap-2">
-                        <a href="https://share.google/g6sDrVKlK3OyQ2spP" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 px-2.5 sm:px-3 py-1 rounded-full text-[11px] sm:text-xs font-bold bg-saffron-100 hover:bg-saffron-200 text-crimson-800 border border-saffron-400/50 shadow-sm transition-colors">
+                        <a href="https://share.google/g6sDrVKlK3OyQ2spP" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 px-2.5 sm:px-3 py-0.5 sm:py-1 rounded-full text-[10px] sm:text-xs font-bold bg-saffron-100 hover:bg-saffron-200 text-crimson-800 border border-saffron-400/50 shadow-sm transition-colors">
                             <i class="fa-solid fa-star text-saffron-600"></i> 5.0★ Google · 49+ Reviews
                         </a>
-                        <span class="inline-flex items-center gap-1.5 px-2.5 sm:px-3 py-1 rounded-full text-[11px] sm:text-xs font-bold bg-peacock-900 text-saffron-400">
+                        <span class="inline-flex items-center gap-1.5 px-2.5 sm:px-3 py-0.5 sm:py-1 rounded-full text-[10px] sm:text-xs font-bold bg-peacock-900 text-saffron-400">
                             <i class="fa-solid fa-train-subway"></i> Free Hosapete Pickup
                         </span>
-                        <span class="inline-flex items-center gap-1.5 px-2.5 sm:px-3 py-1 rounded-full text-[11px] sm:text-xs font-bold bg-crimson-50 text-crimson-700 border border-crimson-200">
+                        <span class="hidden sm:inline-flex items-center gap-1.5 px-2.5 sm:px-3 py-1 rounded-full text-[11px] sm:text-xs font-bold bg-crimson-50 text-crimson-700 border border-crimson-200">
                             🛺 Reg: KA35 AA 4376
                         </span>
                     </div>
 
                     <!-- Hero Display Title -->
-                    <div class="space-y-1 sm:space-y-2">
-                        <p class="text-[11px] sm:text-sm font-mono font-bold uppercase tracking-[0.15em] sm:tracking-[0.2em] text-crimson-700">
+                    <div>
+                        <p class="hidden sm:block text-[11px] sm:text-sm font-mono font-bold uppercase tracking-[0.15em] sm:tracking-[0.2em] text-crimson-700 mb-1">
                             Hampi Tour's Auto-Rickshaw Driver • Manju
                         </p>
-                        <h1 class="font-serif font-bold hero-display text-ivory-900 tracking-tight leading-[1.08]">
+                        <h1 class="font-serif font-bold text-2xl sm:text-4xl lg:hero-display text-ivory-900 tracking-tight leading-[1.12]">
                             Explore Ancient <span class="italic text-crimson-700">Hampi</span><br>
-                            <span id="hero-host-headline" class="text-xl sm:text-3xl lg:text-5xl text-peacock-900 block mt-1">with Manju — Your 5.0★ Rated Local Auto Guide</span>
+                            <span id="hero-host-headline" class="text-sm sm:text-2xl lg:text-3xl text-peacock-900 font-sans font-bold block mt-1">with Manju — Local Auto Guide & Rickshaw</span>
                         </h1>
                     </div>
 
+                    <!-- Crisp Description -->
                     <p class="text-xs sm:text-base lg:text-lg text-stone-700 leading-relaxed max-w-2xl">
-                        From breathtaking <strong class="text-ivory-900 font-semibold">5:00 AM Matanga Hill sunrises</strong> and <strong class="text-ivory-900 font-semibold">Sonapur Lake coracle boat rides</strong> to all <strong class="text-ivory-900 font-semibold">25 iconic Vijayanagara monuments</strong>, homestays, and Badami cave excursions — experience Hampi in Manju's well-maintained auto (<strong class="font-mono text-crimson-700">KA35 AA 4376</strong>).
+                        <span class="sm:hidden text-stone-600">Private Tuk Tuk sightseeing, sunrise treks & all 25 iconic monuments in Manju's auto (<strong class="font-mono text-crimson-700">KA35 AA 4376</strong>).</span>
+                        <span class="hidden sm:inline">From breathtaking <strong class="text-ivory-900 font-semibold">5:00 AM Matanga Hill sunrises</strong> and <strong class="text-ivory-900 font-semibold">Sonapur Lake coracle boat rides</strong> to all <strong class="text-ivory-900 font-semibold">25 iconic Vijayanagara monuments</strong>, homestays, and Badami cave excursions — experience Hampi in Manju's well-maintained auto (<strong class="font-mono text-crimson-700">KA35 AA 4376</strong>).</span>
                     </p>
+                </div>
 
-                    <!-- 4 Key Authority Metrics -->
-                    <div class="grid grid-cols-2 sm:grid-cols-4 gap-2 sm:gap-4 pt-1">
-                        <a href="#reviews" class="bg-white/95 hover:bg-saffron-50 p-2.5 sm:p-4 rounded-2xl border border-ivory-200 shadow-sm text-center transition-colors">
-                            <div class="font-mono font-extrabold text-xl sm:text-3xl text-crimson-700">5.0★</div>
-                            <div class="text-[10px] sm:text-xs font-bold text-stone-600 mt-0.5 leading-tight">49+ Reviews</div>
-                        </a>
-                        <div class="bg-white/95 p-2.5 sm:p-4 rounded-2xl border border-ivory-200 shadow-sm text-center">
-                            <div class="font-mono font-extrabold text-xl sm:text-3xl text-peacock-800">500+</div>
-                            <div class="text-[10px] sm:text-xs font-bold text-stone-600 mt-0.5 leading-tight">Happy Travellers</div>
-                        </div>
-                        <div class="bg-white/95 p-2.5 sm:p-4 rounded-2xl border border-ivory-200 shadow-sm text-center">
-                            <div class="font-mono font-extrabold text-xl sm:text-3xl text-saffron-600">25+</div>
-                            <div class="text-[10px] sm:text-xs font-bold text-stone-600 mt-0.5 leading-tight">Heritage Spots</div>
-                        </div>
-                        <div class="bg-white/95 p-2.5 sm:p-4 rounded-2xl border border-ivory-200 shadow-sm text-center">
-                            <div class="font-mono font-extrabold text-xl sm:text-3xl text-crimson-700">24/7</div>
-                            <div class="text-[10px] sm:text-xs font-bold text-stone-600 mt-0.5 leading-tight">Station Pickup</div>
-                        </div>
-                    </div>
-
-                    <!-- Interactive Instant Tour & Advance Booking Widget -->
-                    <div class="bg-white p-3.5 sm:p-6 rounded-2xl sm:rounded-3xl border-2 border-ivory-200 shadow-luxe">
-                        <div class="flex flex-wrap items-center justify-between gap-1.5 mb-3">
-                            <span class="text-[11px] sm:text-xs font-extrabold uppercase tracking-wider text-crimson-700 flex items-center gap-1.5">
+                <!-- 2. Instant WhatsApp Booking Widget (TOP: Order 2 on mobile, 7 cols on desktop) -->
+                <div class="w-full lg:col-span-7 order-2">
+                    <div class="bg-white p-3.5 sm:p-5 rounded-2xl sm:rounded-3xl border-2 border-ivory-200 shadow-luxe">
+                        <div class="flex flex-wrap items-center justify-between gap-1.5 mb-2.5 sm:mb-3">
+                            <span class="text-[10px] sm:text-xs font-extrabold uppercase tracking-wider text-crimson-700 flex items-center gap-1.5">
                                 <span class="w-2 h-2 rounded-full bg-emerald-500 animate-ping"></span>
                                 Instant WhatsApp Booking
                             </span>
-                            <span class="text-[10px] sm:text-[11px] font-mono font-bold text-peacock-800 bg-saffron-100 px-2 py-0.5 rounded-full">
+                            <span class="text-[9px] sm:text-[11px] font-mono font-bold text-peacock-800 bg-saffron-100 px-2 py-0.5 rounded-full">
                                 🚉 Free Hosapete Station Pickup
                             </span>
                         </div>
 
-                        <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+                        <div class="grid grid-cols-1 sm:grid-cols-3 gap-2.5 sm:gap-3">
                             <div>
-                                <label class="block text-[10px] font-bold uppercase text-stone-500 mb-1">Choose Package</label>
-                                <select id="hero-plan-select" class="w-full px-3 py-2.5 rounded-xl bg-ivory-50 border border-ivory-300 text-xs sm:text-sm font-bold text-ivory-900 focus:outline-none focus:border-crimson-600 min-h-[44px]">
+                                <label class="block text-[9px] sm:text-[10px] font-bold uppercase text-stone-500 mb-1">Choose Package</label>
+                                <select id="hero-plan-select" class="w-full px-3 py-2 rounded-xl bg-ivory-50 border border-ivory-300 text-xs sm:text-sm font-bold text-ivory-900 focus:outline-none focus:border-crimson-600 min-h-[40px] sm:min-h-[44px]">
                                     <option value="Hampi Tuk Tuk Sightseeing Tour (10 AM - 8:30 PM)">🛺 Hampi Tuk Tuk Sightseeing (10 AM–8:30 PM)</option>
                                     <option value="Sunrise + Heritage & Coracle Boat Ride (5 AM Start)">🌅 Matanga Sunrise + Heritage + Coracle</option>
                                     <option value="Anegundi & North Hampi Tour (Anjanadri + Sonapur Lake)">🐒 Anegundi & North Hampi + Coracle</option>
@@ -306,8 +299,8 @@
                                 </select>
                             </div>
                             <div>
-                                <label class="block text-[10px] font-bold uppercase text-stone-500 mb-1">Travelling From / Pickup</label>
-                                <select id="hero-pickup-select" class="w-full px-3 py-2.5 rounded-xl bg-ivory-50 border border-ivory-300 text-xs sm:text-sm font-bold text-ivory-900 focus:outline-none focus:border-crimson-600 min-h-[44px]">
+                                <label class="block text-[9px] sm:text-[10px] font-bold uppercase text-stone-500 mb-1">Travelling From / Pickup</label>
+                                <select id="hero-pickup-select" class="w-full px-3 py-2 rounded-xl bg-ivory-50 border border-ivory-300 text-xs sm:text-sm font-bold text-ivory-900 focus:outline-none focus:border-crimson-600 min-h-[40px] sm:min-h-[44px]">
                                     <option value="Hosapete Railway Station (Free Pickup)">Hosapete Railway Station</option>
                                     <option value="Hampi / Hospet Bus Stand">Hampi / Hospet Bus Stand</option>
                                     <option value="Arriving from Pune / Mumbai (Overnight Train)">Arriving from Pune / Mumbai</option>
@@ -315,8 +308,8 @@
                                     <option value="Hotel / Homestay in Hampi">My Hotel / Homestay in Hampi</option>
                                 </select>
                             </div>
-                            <div class="flex items-end gap-2">
-                                <button onclick="bookFromHero()" class="w-full py-3 px-4 rounded-xl bg-gradient-to-r from-crimson-700 via-crimson-600 to-saffron-600 hover:from-crimson-800 hover:to-saffron-700 active:scale-[0.99] text-white font-extrabold text-xs sm:text-sm shadow-md transition-all flex items-center justify-center gap-2 min-h-[44px]">
+                            <div class="flex items-end">
+                                <button onclick="bookFromHero()" class="w-full py-2.5 sm:py-3 px-4 rounded-xl bg-gradient-to-r from-crimson-700 via-crimson-600 to-saffron-600 hover:from-crimson-800 hover:to-saffron-700 active:scale-[0.99] text-white font-extrabold text-xs sm:text-sm shadow-md transition-all flex items-center justify-center gap-2 min-h-[40px] sm:min-h-[44px]">
                                     <i class="fa-brands fa-whatsapp text-base"></i>
                                     <span>Book via WhatsApp</span>
                                 </button>
@@ -325,57 +318,72 @@
                     </div>
                 </div>
 
-                <!-- Right Column: Visual Showcase Card + Guide Badge (5 Cols) -->
-                <div class="lg:col-span-5 relative">
-                    <div class="relative rounded-3xl overflow-hidden border-4 border-white shadow-2xl aspect-[4/5] bg-ivory-200 group">
+                <!-- 3. Visual Showcase: Manju With His Auto Rickshaw (Order 3 on mobile, 5 cols on desktop, clearly visible!) -->
+                <div class="w-full lg:col-span-5 lg:col-start-8 lg:row-start-1 lg:row-span-3 relative order-3 max-w-lg mx-auto lg:max-w-none">
+                    <div class="relative rounded-2xl sm:rounded-3xl overflow-hidden border-2 sm:border-4 border-white shadow-xl sm:shadow-2xl aspect-[3/4] sm:aspect-[4/5] bg-ivory-200">
+                        <!-- Real Photo of Manju standing beside his Auto KA35 AA 4376 (Positioned so Manju is seen clearly) -->
                         <img 
                             src="./assets/solo.jpg" 
-                            alt="Iconic Stone Chariot at Vittala Temple Hampi" 
-                            class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700"
+                            alt="Hampi Tour's Auto-rickshaw driver Manju with his Bajaj RE auto KA35 AA 4376" 
+                            class="w-full h-full object-cover object-[25%_25%]"
                         >
-                        <div class="absolute inset-0 bg-gradient-to-t from-peacock-950/95 via-peacock-950/30 to-transparent"></div>
 
-                        <!-- Top Floating Badges -->
-                        <div class="absolute top-2.5 left-2.5 right-2.5 sm:top-4 sm:left-4 sm:right-4 flex justify-between items-center gap-2">
-                            <span class="px-2.5 py-1 sm:px-3.5 sm:py-1.5 rounded-full bg-peacock-950/80 backdrop-blur-md text-saffron-400 text-[10px] sm:text-xs font-mono font-bold tracking-wider uppercase border border-white/15">
-                                <i class="fa-solid fa-award mr-1"></i> Trusted Since 2015
+                        <!-- Top Floating Badges (Subtle, placed at corners so Manju's face & auto are 100% uncovered) -->
+                        <div class="absolute top-2.5 left-2.5 right-2.5 flex justify-between items-center gap-2 pointer-events-none">
+                            <span class="px-2.5 py-1 rounded-full bg-peacock-950/85 backdrop-blur-md text-saffron-400 text-[10px] sm:text-xs font-mono font-bold tracking-wider uppercase border border-white/20 shadow-md">
+                                <i class="fa-solid fa-circle-check text-emerald-400 mr-1"></i> Manju · Local Guide
                             </span>
-                            <button onclick="openAdvanceBookingModal()" class="px-2.5 py-1 sm:px-3.5 sm:py-1.5 rounded-full bg-saffron-500 hover:bg-saffron-400 text-ivory-900 font-extrabold text-[10px] sm:text-xs shadow transition-colors">
-                                📅 Book in Advance
-                            </button>
+                            <span class="px-2.5 py-1 rounded-lg bg-[#FACC15] text-ivory-900 border border-ivory-900 text-[10px] sm:text-xs font-mono font-extrabold shadow-md">
+                                KA35 AA 4376
+                            </span>
                         </div>
+                    </div>
 
-                        <!-- Bottom Floating Guide Identity Card (Compact on Mobile, Full on Desktop) -->
-                        <div class="absolute bottom-2 left-2 right-2 sm:bottom-4 sm:left-4 sm:right-4 bg-ivory-50/90 sm:bg-ivory-50/95 backdrop-blur-md p-3 sm:p-5 rounded-xl sm:rounded-2xl border border-ivory-200/80 shadow-lg">
-                            <div class="flex items-center sm:items-start justify-between gap-2.5 sm:gap-3">
-                                <div class="min-w-0">
-                                    <span class="inline-block px-2 py-0.5 rounded bg-saffron-400 text-ivory-900 font-mono font-extrabold text-[9px] sm:text-[10px] uppercase tracking-wider mb-0.5 sm:mb-1">
-                                        🌅 Sunrise & Heritage Specialist
-                                    </span>
-                                    <h3 class="font-bold text-sm sm:text-xl lg:text-2xl text-ivory-900 leading-snug truncate sm:whitespace-normal">
-                                        Every Stone, Every Story, Every Sunrise
-                                    </h3>
-                                    <p class="text-[10px] sm:text-xs text-stone-600 mt-0.5 sm:mt-1 truncate sm:whitespace-normal">
-                                        Speaks English · Hindi · Kannada · Telugu · Tamil
-                                    </p>
-                                </div>
-                                <!-- Yellow & Black License Plate Replica -->
-                                <div class="bg-[#FACC15] border sm:border-2 border-ivory-900 px-2 py-1 sm:px-2.5 sm:py-1.5 rounded-lg sm:rounded-xl text-center shrink-0 shadow-inner">
-                                    <div class="text-[7px] sm:text-[8px] font-mono font-bold text-ivory-900 leading-none">IND • KA</div>
-                                    <div class="text-[10px] sm:text-xs font-mono font-extrabold text-ivory-900 tracking-tighter leading-tight mt-0.5">KA35 AA<br>4376</div>
-                                </div>
+                    <!-- Clean Caption Bar Below Image (Leaves photo completely unobstructed) -->
+                    <div class="mt-2.5 p-3 rounded-2xl bg-white border border-ivory-200 shadow-sm flex items-center justify-between gap-3 text-xs">
+                        <div>
+                            <div class="font-bold text-ivory-900 text-xs sm:text-sm flex items-center gap-1.5">
+                                <span>Manju</span>
+                                <span class="text-[10px] font-mono px-1.5 py-0.2 rounded bg-saffron-100 text-crimson-800 font-extrabold">KA35 AA 4376</span>
                             </div>
-                            <div class="hidden sm:flex mt-3.5 pt-3 border-t border-ivory-200 items-center justify-between text-xs">
-                                <span class="font-bold text-peacock-800 flex items-center gap-1.5">
-                                    <i class="fa-solid fa-circle-check text-emerald-600"></i> Hosapete Rly Pickup Included
-                                </span>
-                                <a id="hero-card-phone" href="tel:+918660730121" class="font-mono font-extrabold text-crimson-700 hover:underline">
-                                    Call: 86607 30121 →
-                                </a>
-                            </div>
+                            <p class="text-[10px] sm:text-[11px] text-stone-500 mt-0.5">Speaks English · Hindi · Kannada · Telugu · Tamil</p>
+                        </div>
+                        <a href="tel:+918660730121" class="px-3 py-1.5 rounded-xl bg-crimson-50 hover:bg-crimson-100 text-crimson-700 font-bold border border-crimson-200 text-xs transition-colors shrink-0 flex items-center gap-1">
+                            <i class="fa-solid fa-phone"></i>
+                            <span>Call</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- 4. Authority Metrics (Order 4 on mobile, 7 cols on desktop) -->
+                <div class="w-full lg:col-span-7 order-4">
+                    <div class="grid grid-cols-4 gap-1.5 sm:gap-3">
+                        <a href="#reviews" class="bg-white/95 hover:bg-saffron-50 p-1.5 sm:p-3 rounded-xl sm:rounded-2xl border border-ivory-200 shadow-sm text-center transition-colors">
+                            <div class="font-mono font-extrabold text-sm sm:text-2xl lg:text-3xl text-crimson-700">5.0★</div>
+                            <div class="text-[8px] sm:text-xs font-bold text-stone-600 mt-0.5 leading-tight">49+ Reviews</div>
+                        </a>
+                        <div class="bg-white/95 p-1.5 sm:p-3 rounded-xl sm:rounded-2xl border border-ivory-200 shadow-sm text-center">
+                            <div class="font-mono font-extrabold text-sm sm:text-2xl lg:text-3xl text-peacock-800">500+</div>
+                            <div class="text-[8px] sm:text-xs font-bold text-stone-600 mt-0.5 leading-tight">Happy Tourists</div>
+                        </div>
+                        <div class="bg-white/95 p-1.5 sm:p-3 rounded-xl sm:rounded-2xl border border-ivory-200 shadow-sm text-center">
+                            <div class="font-mono font-extrabold text-sm sm:text-2xl lg:text-3xl text-saffron-600">25+</div>
+                            <div class="text-[8px] sm:text-xs font-bold text-stone-600 mt-0.5 leading-tight">Heritage Spots</div>
+                        </div>
+                        <div class="bg-white/95 p-1.5 sm:p-3 rounded-xl sm:rounded-2xl border border-ivory-200 shadow-sm text-center">
+                            <div class="font-mono font-extrabold text-sm sm:text-2xl lg:text-3xl text-crimson-700">24/7</div>
+                            <div class="text-[8px] sm:text-xs font-bold text-stone-600 mt-0.5 leading-tight">Station Pickup</div>
                         </div>
                     </div>
                 </div>
+
+            </div>
+        </div>
+    </section>
+
+            </div>
+        </div>
+    </section>
 
             </div>
         </div>
@@ -1427,17 +1435,20 @@
                     </div>
 
                     <!-- Quick Contact Channels -->
-                    <div class="grid grid-cols-2 sm:grid-cols-4 gap-2.5 pt-2">
+                    <div class="grid grid-cols-2 sm:grid-cols-5 gap-2.5 pt-2">
                         <a id="contact-call-btn" href="tel:+918660730121" class="py-3 px-3 rounded-xl bg-crimson-700 hover:bg-crimson-800 text-white font-bold text-xs flex items-center justify-center gap-1.5 shadow-sm transition-all">
                             <i class="fa-solid fa-phone"></i> <span>Call Manju</span>
                         </a>
                         <button onclick="openDirectWhatsApp('Namaste Manju! I found your profile and Google Map. I want to book a Hampi Auto Tour.')" class="py-3 px-3 rounded-xl bg-[#1E7E34] hover:bg-[#166528] text-white font-bold text-xs flex items-center justify-center gap-1.5 shadow-sm transition-all">
                             <i class="fa-brands fa-whatsapp text-sm"></i> <span>WhatsApp</span>
                         </button>
-                        <a id="contact-sms-btn" href="sms:+918660730121" class="py-3 px-3 rounded-xl bg-ivory-100 hover:bg-ivory-200 text-ivory-900 border border-ivory-300 font-bold text-xs flex items-center justify-center gap-1.5 transition-all">
+                        <a id="contact-sms-btn" href="sms:+918660730121?body=Namaste%20Manju!%20I%20would%20like%20to%20book%20a%20Hampi%20Auto%20Tour." class="py-3 px-3 rounded-xl bg-ivory-100 hover:bg-ivory-200 text-ivory-900 border border-ivory-300 font-bold text-xs flex items-center justify-center gap-1.5 transition-all">
                             <i class="fa-solid fa-comment-sms text-crimson-700"></i> <span>SMS Manju</span>
                         </a>
-                        <a href="https://share.google/g6sDrVKlK3OyQ2spP" target="_blank" rel="noopener noreferrer" class="py-3 px-3 rounded-xl bg-saffron-500 hover:bg-saffron-400 text-ivory-900 font-extrabold text-xs flex items-center justify-center gap-1.5 shadow-sm transition-all">
+                        <a id="contact-insta-btn" href="https://www.instagram.com/hampi__manju?utm_source=qr&cplk=MTN6YjR4cmhnZXp6ZQ==" target="_blank" rel="noopener noreferrer" class="py-3 px-3 rounded-xl bg-gradient-to-r from-[#833ab4] via-[#fd1d1d] to-[#fcb045] hover:opacity-95 text-white font-bold text-xs flex items-center justify-center gap-1.5 shadow-sm transition-all">
+                            <i class="fa-brands fa-instagram text-base"></i> <span>Instagram</span>
+                        </a>
+                        <a href="https://share.google/g6sDrVKlK3OyQ2spP" target="_blank" rel="noopener noreferrer" class="py-3 px-3 rounded-xl bg-saffron-500 hover:bg-saffron-400 text-ivory-900 font-extrabold text-xs flex items-center justify-center gap-1.5 shadow-sm transition-all col-span-2 sm:col-span-1">
                             <i class="fa-solid fa-diamond-turn-right"></i> <span>Open Map</span>
                         </a>
                     </div>
@@ -1493,10 +1504,14 @@
                     <p class="text-xs sm:text-sm text-ivory-300 max-w-sm leading-relaxed">
                         "Hampi: More Than A Destination, It's An Experience." Private Tuk Tuk sightseeing, Matanga Hill sunrise treks, Sonapur Lake coracle rides, Meti's Homestay, and Badami AC excursions with Manju.
                     </p>
-                    <div class="pt-1">
+                    <div class="pt-2 flex flex-wrap items-center gap-3">
                         <a href="https://share.google/g6sDrVKlK3OyQ2spP" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-xs font-bold text-saffron-400 hover:text-saffron-300">
                             <i class="fa-solid fa-map-pin"></i>
                             <span>Google Maps: Hampi Tour's Auto-rickshaw driver. Manju. ↗</span>
+                        </a>
+                        <a href="https://www.instagram.com/hampi__manju?utm_source=qr&cplk=MTN6YjR4cmhnZXp6ZQ==" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-xs font-bold text-pink-400 hover:text-pink-300">
+                            <i class="fa-brands fa-instagram text-sm"></i>
+                            <span>Instagram: @hampi__manju ↗</span>
                         </a>
                     </div>
                 </div>
@@ -1531,27 +1546,40 @@
         </div>
     </footer>
 
-    <!-- Sticky Mobile Bottom Bar (4 Thumb-Friendly Actions) -->
-    <nav class="fixed bottom-0 left-0 right-0 z-40 sm:hidden bg-ivory-50/95 backdrop-blur-lg border-t border-ivory-300 px-2 py-1 pb-safe shadow-[0_-10px_25px_-5px_rgba(28,22,19,0.12)]">
-        <div class="grid grid-cols-4 gap-1.5 items-center">
-            <a id="mobile-call-btn" href="tel:+918660730121" class="flex flex-col items-center justify-center py-1 rounded-xl text-ivory-900 active:bg-ivory-200/70 min-h-[44px]">
-                <i class="fa-solid fa-phone text-crimson-700 text-base"></i>
+    <!-- Sticky Mobile Bottom Bar (5 Thumb-Friendly Actions: Phone Centered) -->
+    <nav class="fixed bottom-0 left-0 right-0 z-40 sm:hidden bg-ivory-50/95 backdrop-blur-lg border-t border-ivory-300 px-1.5 py-1 pb-safe shadow-[0_-10px_25px_-5px_rgba(28,22,19,0.12)]">
+        <div class="grid grid-cols-5 gap-1 items-center text-center">
+            <!-- 1: Normal Message (SMS) -->
+            <a id="mobile-sms-btn" href="sms:+918660730121?body=Namaste%20Manju!%20I%20would%20like%20to%20book%20a%20Hampi%20Auto%20Tour." class="flex flex-col items-center justify-center py-1 rounded-xl text-ivory-900 active:bg-ivory-200/70 min-h-[44px]">
+                <i class="fa-solid fa-comment-sms text-peacock-800 text-base"></i>
+                <span class="text-[10px] font-extrabold mt-0.5">Message</span>
+            </a>
+
+            <!-- 2: WhatsApp -->
+            <button onclick="openDirectWhatsApp('Namaste! I would like to book a Hampi Auto Rickshaw Tour.')" class="flex flex-col items-center justify-center py-1 rounded-xl text-ivory-900 active:bg-ivory-200/70 min-h-[44px]">
+                <i class="fa-brands fa-whatsapp text-[#1E7E34] text-lg leading-none"></i>
+                <span class="text-[10px] font-extrabold mt-0.5">WhatsApp</span>
+            </button>
+
+            <!-- 3: CENTER Phone / Call (Prominent Centerpiece) -->
+            <a id="mobile-call-btn" href="tel:+918660730121" class="flex flex-col items-center justify-center py-1 rounded-xl bg-crimson-700 active:bg-crimson-800 text-white min-h-[44px] shadow-sm">
+                <i class="fa-solid fa-phone text-base"></i>
                 <span class="text-[10px] font-extrabold mt-0.5">Call</span>
             </a>
+
+            <!-- 4: Instagram -->
+            <a id="mobile-instagram-btn" href="https://www.instagram.com/hampi__manju?utm_source=qr&cplk=MTN6YjR4cmhnZXp6ZQ==" target="_blank" rel="noopener noreferrer" class="flex flex-col items-center justify-center py-1 rounded-xl text-ivory-900 active:bg-ivory-200/70 min-h-[44px]">
+                <i class="fa-brands fa-instagram text-[#E1306C] text-lg"></i>
+                <span class="text-[10px] font-extrabold mt-0.5">Instagram</span>
+            </a>
+
+            <!-- 5: My Route -->
             <button onclick="toggleCustomDrawer()" class="relative flex flex-col items-center justify-center py-1 rounded-xl text-ivory-900 active:bg-ivory-200/70 min-h-[44px]">
                 <div class="relative">
                     <i class="fa-solid fa-route text-peacock-800 text-base"></i>
                     <span id="mobile-route-count-badge" class="absolute -top-1 -right-2 px-1.5 py-0.2 text-[8px] font-mono font-extrabold rounded-full bg-crimson-700 text-white leading-tight">6</span>
                 </div>
                 <span class="text-[10px] font-bold mt-0.5">My Route</span>
-            </button>
-            <button onclick="openAdvanceBookingModal()" class="flex flex-col items-center justify-center py-1 rounded-xl bg-saffron-100 text-ivory-900 border border-saffron-400/50 min-h-[44px]">
-                <i class="fa-regular fa-calendar-check text-crimson-700 text-base"></i>
-                <span class="text-[10px] font-extrabold mt-0.5">Advance</span>
-            </button>
-            <button onclick="openDirectWhatsApp('Namaste! I would like to book a Hampi Auto Rickshaw Tour.')" class="flex flex-col items-center justify-center py-1 rounded-xl bg-[#1E7E34] active:bg-[#166528] text-white min-h-[44px] shadow-sm">
-                <i class="fa-brands fa-whatsapp text-lg leading-none"></i>
-                <span class="text-[10px] font-extrabold mt-0.5">WhatsApp</span>
             </button>
         </div>
     </nav>
